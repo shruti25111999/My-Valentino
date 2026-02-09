@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --burgundy: #8b0000;
+            --rose-gold: #b76e79;
+            --cream: #f4e8d8;
+            --accent-red: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--deep-black);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Animated background with floating hearts */
+        .background-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart-particle {
+            position: absolute;
+            font-size: 20px;
+            color: var(--burgundy);
+            opacity: 0.15;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.15;
+            }
+            90% {
+                opacity: 0.15;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at center, rgba(139, 0, 0, 0.2) 0%, var(--deep-black) 70%);
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--rose-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--rose-gold);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            animation: fadeInUp 1.5s ease-out 0.3s backwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '♥';
+            font-size: 2rem;
+            color: var(--burgundy);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 8rem;
+            opacity: 0;
+            animation: fadeInSection 1s ease-out forwards;
+        }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--rose-gold);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.1) 100%);
+            border: 1px solid rgba(183, 110, 121, 0.2);
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-letter::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 8rem;
+            color: var(--burgundy);
+            opacity: 0.1;
+            font-family: 'Cinzel', serif;
+        }
+
+        .love-letter-content {
+            position: relative;
+            z-index: 1;
+            line-height: 2;
+            font-size: 1.3rem;
+            color: var(--cream);
+            text-align: left;
+        }
+
+        .love-letter-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .signature {
+            text-align: right;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--rose-gold);
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .photo-frame {
+            position: relative;
+            aspect-ratio: 1;
+            background: var(--charcoal);
+            border: 3px solid var(--burgundy);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(139, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--burgundy);
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.2) 100%);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--rose-gold);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover .photo-caption {
+            transform: translateY(0);
+        }
+
+        /* Reasons Section */
+        .reasons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(139, 0, 0, 0.1) 100%);
+            border-left: 4px solid var(--burgundy);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '♥';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 3rem;
+            color: var(--burgundy);
+            opacity: 0.1;
+        }
+
+        .reason-card:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent-red);
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(139, 0, 0, 0.2) 100%);
+        }
+
+        .reason-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+
+        .reason-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--cream);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(183, 110, 121, 0.2);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: var(--rose-gold);
+            margin-bottom: 1rem;
+        }
+
+        .heart-icon {
+            font-size: 2rem;
+            color: var(--burgundy);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        /* Question Page Styles */
+        .question-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at center, rgba(139, 0, 0, 0.4) 0%, var(--deep-black) 70%);
+            overflow: hidden;
+        }
+
+        .question-background-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.3) 0%, transparent 70%);
+            animation: pulseGlow 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .question-container {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            padding: 4rem 2rem;
+            animation: fadeInScale 1.2s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Name Reveal */
+        .name-reveal {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.2em;
+            white-space: nowrap;
+        }
+
+        .name-letter {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--rose-gold) 50%, var(--burgundy) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: letterReveal 0.8s ease-out backwards;
+            text-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+        }
+
+        .name-letter:nth-child(1) { animation-delay: 0.1s; }
+        .name-letter:nth-child(2) { animation-delay: 0.2s; }
+        .name-letter:nth-child(3) { animation-delay: 0.3s; }
+        .name-letter:nth-child(4) { animation-delay: 0.4s; }
+        .name-letter:nth-child(5) { animation-delay: 0.5s; }
+        .name-letter:nth-child(6) { animation-delay: 0.6s; }
+        .name-letter:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes letterReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Romantic Divider */
+        .romantic-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            animation: fadeIn 1.5s ease-out 0.8s backwards;
+        }
+
+        .divider-heart {
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            animation: heartPulse 2s ease-in-out infinite;
+        }
+
+        .divider-line {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
+        }
+
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* Question Title */
+        .question-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-out 1s backwards;
+        }
+
+        .title-word {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--rose-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0.5rem;
+            animation: wordFloat 3s ease-in-out infinite;
+        }
+
+        .title-word:nth-child(1) { animation-delay: 0s; }
+        .title-word:nth-child(2) { animation-delay: 0.3s; }
+        .title-word:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes wordFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Rose Decoration */
+        .rose-decoration {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            animation: fadeIn 1.5s ease-out 1.2s backwards;
+        }
+
+        .rose {
+            font-size: 2.5rem;
+            animation: roseRotate 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
+        }
+
+        .rose:nth-child(2) {
+            animation-delay: 0.5s;
+            font-size: 3rem;
+        }
+
+        .rose:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes roseRotate {
+            0%, 100% {
+                transform: rotate(-5deg) scale(1);
+            }
+            50% {
+                transform: rotate(5deg) scale(1.1);
+            }
+        }
+
+        /* Question Text */
+        .question-text {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: var(--cream);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            animation: fadeIn 1.5s ease-out 1.4s backwards;
+        }
+
+        .question-line {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--rose-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 400;
+            font-size: 1.2em;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Hearts Decoration */
+        .hearts-decoration {
+            font-size: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            animation: fadeIn 1.5s ease-out 1.6s backwards;
+        }
+
+        .hearts-decoration span {
+            color: var(--burgundy);
+            animation: heartFloat 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.6));
+        }
+
+        .hearts-decoration span:nth-child(1) { animation-delay: 0s; }
+        .hearts-decoration span:nth-child(2) { animation-delay: 0.2s; }
+        .hearts-decoration span:nth-child(3) { animation-delay: 0.4s; }
+        .hearts-decoration span:nth-child(4) { animation-delay: 0.6s; }
+        .hearts-decoration span:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-15px) scale(1.2);
+            }
+        }
+
+        /* Sparkles */
+        .sparkles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: sparkleFloat 3s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: 30%;
+            left: 5%;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(4) {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .sparkle:nth-child(5) {
+            top: 50%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .sparkle:nth-child(6) {
+            top: 40%;
+            right: 5%;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-20px) rotate(180deg) scale(1);
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .yes-button, .no-button {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yes-button {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--accent-red) 100%);
+            color: var(--cream);
+            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+            animation: fadeIn 1.5s ease-out 1.8s backwards, buttonGlow 2s ease-in-out infinite 3s;
+        }
+
+        .button-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            50%, 100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+            }
+            50% {
+                box-shadow: 0 12px 50px rgba(255, 107, 107, 0.8);
+            }
+        }
+
+        .yes-button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 50px rgba(255, 107, 107, 0.8);
+        }
+
+        .no-button {
+            background: var(--charcoal);
+            color: var(--cream);
+            border: 2px solid var(--rose-gold);
+            position: relative;
+            transition: all 0.2s ease;
+            animation: fadeIn 1.5s ease-out 2s backwards;
+        }
+
+        .no-button:hover {
+            background: var(--charcoal);
+            border-color: var(--burgundy);
+        }
+
+        /* Gift Page Styles */
+        .gift-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: radial-gradient(ellipse at center, rgba(139, 0, 0, 0.3) 0%, var(--deep-black) 70%);
+        }
+
+        .gift-container {
+            text-align: center;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .gift-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--rose-gold);
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .gift-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--cream);
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gift-box {
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.2) 100%);
+            border: 3px solid var(--burgundy);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInScale 0.8s ease-out backwards;
+        }
+
+        .gift-box:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .gift-box:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .gift-box:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            border-radius: 50%;
+        }
+
+        .gift-box:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .gift-box:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--accent-red);
+            box-shadow: 0 20px 60px rgba(255, 107, 107, 0.5);
+        }
+
+        .gift-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            animation: bounceGift 2s ease-in-out infinite;
+        }
+
+        .gift-box:hover .gift-icon {
+            animation: shakeGift 0.5s ease-in-out;
+        }
+
+        @keyframes bounceGift {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shakeGift {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .gift-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--cream);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(26, 26, 26, 0.9);
+            color: var(--rose-gold);
+            border: 2px solid var(--burgundy);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: var(--burgundy);
+            color: var(--cream);
+            transform: translateX(-5px);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.5);
+        }
+
+        /* QR Code Section Styles */
+        .qr-section {
+            margin-bottom: 6rem;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .qr-frame {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.1) 100%);
+            border: 3px solid var(--burgundy);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-placeholder {
+            text-align: center;
+            color: var(--cream);
+            width: 100%;
+        }
+
+        .qr-instruction {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--rose-gold);
+            text-align: center;
+        }
+
+        /* Lyrics Section Styles */
+        .lyrics-section {
+            margin-bottom: 6rem;
+        }
+
+        .lyrics-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .lyrics-verse {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(139, 0, 0, 0.05) 100%);
+            border-left: 4px solid var(--burgundy);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .lyrics-verse:hover {
+            border-left-color: var(--accent-red);
+            transform: translateX(10px);
+        }
+
+        .verse-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .lyrics-verse p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        /* Love Coupons Styles */
+        .coupons-section {
+            margin-bottom: 8rem;
+        }
+
+        .coupons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .coupon-card {
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.1) 100%);
+            border: 2px dashed var(--burgundy);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coupon-card::before {
+            content: '✂';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            opacity: 0.3;
+        }
+
+        .coupon-card:hover {
+            transform: translateY(-5px) rotate(1deg);
+            border-color: var(--accent-red);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .coupon-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .coupon-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--rose-gold);
+            margin-bottom: 1rem;
+        }
+
+        .coupon-description {
+            font-size: 1rem;
+            color: var(--cream);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .coupon-code {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--burgundy);
+            letter-spacing: 0.1em;
+        }
+
+        /* Our Future Together Styles */
+        .future-section {
+            margin-bottom: 8rem;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .future-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(139, 0, 0, 0.15) 100%);
+            border: 1px solid var(--burgundy);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .future-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .future-year {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            letter-spacing: 0.2em;
+        }
+
+        .future-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .future-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 1rem;
+        }
+
+        .future-description {
+            font-size: 1.1rem;
+            color: var(--cream);
+            line-height: 1.7;
+        }
+
+        /* Love Letters Styles */
+        .letters-section {
+            margin-bottom: 8rem;
+        }
+
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .letter-envelope {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.2) 0%, var(--charcoal) 100%);
+            border: 2px solid var(--burgundy);
+            border-radius: 8px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--burgundy);
+            clip-path: polygon(0 0, 50% 60%, 100% 0);
+            transition: all 0.3s ease;
+        }
+
+        .envelope-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--rose-gold);
+            text-align: center;
+            margin-top: 2rem;
+            z-index: 1;
+        }
+
+        .letter-content {
+            display: none;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            background: rgba(244, 232, 216, 0.05);
+            border-top: 1px solid var(--burgundy);
+            border-radius: 4px;
+        }
+
+        .letter-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--cream);
+        }
+
+        .letter-envelope:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .letter-envelope.opened .envelope-flap {
+            transform: rotateX(180deg);
+        }
+
+        .letter-envelope.opened .letter-content {
+            display: block;
+            animation: unfoldLetter 0.5s ease-out;
+        }
+
+        @keyframes unfoldLetter {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Bucket List Styles */
+        .bucketlist-section {
+            margin-bottom: 8rem;
+        }
+
+        .bucketlist-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bucketlist-item {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(139, 0, 0, 0.05) 100%);
+            border-left: 4px solid var(--burgundy);
+            border-radius: 4px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .bucketlist-item:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent-red);
+        }
+
+        .bucket-checkbox {
+            display: none;
+        }
+
+        .bucket-label {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--cream);
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .bucket-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--burgundy);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .bucket-checkbox:checked + .bucket-label::before {
+            background: var(--burgundy);
+            border-color: var(--accent-red);
+        }
+
+        .bucket-checkbox:checked + .bucket-label::after {
+            content: '✓';
+            position: absolute;
+            left: 4px;
+            color: var(--cream);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .bucket-checkbox:checked + .bucket-label .bucket-text {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .bucket-icon {
+            font-size: 1.8rem;
+        }
+
+        .bucket-text {
+            flex: 1;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        /* Love Counter Styles */
+        .love-counter-section {
+            margin-bottom: 8rem;
+        }
+
+        .counter-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .counter-box {
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(139, 0, 0, 0.2) 100%);
+            border: 2px solid var(--burgundy);
+            border-radius: 12px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            border-color: var(--accent-red);
+        }
+
+        .counter-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--rose-gold);
+            margin-bottom: 0.5rem;
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes numberPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .counter-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .counter-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--rose-gold);
+            font-style: italic;
+        }
+
+        /* Love Quotes Carousel Styles */
+        .quotes-section {
+            margin-bottom: 8rem;
+        }
+
+        .quotes-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-card {
+            position: absolute;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(139, 0, 0, 0.2) 100%);
+            border: 2px solid var(--burgundy);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+            pointer-events: none;
+        }
+
+        .quote-card.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .quote-mark {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            color: var(--burgundy);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            color: var(--cream);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .quote-author {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--rose-gold);
+        }
+
+        .quote-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .quote-nav-btn {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: var(--burgundy);
+            color: var(--cream);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-nav-btn:hover {
+            background: var(--accent-red);
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
+        }
+
+        /* Responsive for Gift 3 */
+        @media (max-width: 768px) {
+            .counter-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counter-number {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .quote-card {
+                padding: 2rem 1.5rem;
+            }
+            .coupons-grid,
+            .future-grid,
+            .letters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bucket-label {
+                font-size: 1rem;
+            }
+
+            .bucket-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .qr-frame {
+                max-width: 300px;
+            }
+
+            .lyrics-verse {
+                padding: 1.5rem;
+            }
+
+            .lyrics-verse p {
+                font-size: 1.1rem;
+                padding-left: 0.5rem;
+            }
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .question-container {
+                padding: 2rem 1rem;
+            }
+
+            .name-reveal {
+                font-size: clamp(2rem, 10vw, 4rem);
+                letter-spacing: 0.15em;
+            }
+
+            .rose-decoration {
+                gap: 1rem;
+            }
+
+            .rose {
+                font-size: 2rem;
+            }
+
+            .rose:nth-child(2) {
+                font-size: 2.5rem;
+            }
+
+            .romantic-divider .divider-line {
+                width: 60px;
+            }
+
+            .sparkle {
+                font-size: 1rem;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .yes-button, .no-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .gifts-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .love-letter {
+                padding: 2rem 1.5rem;
+            }
+
+            .love-letter-content {
+                font-size: 1.1rem;
+            }
+
+            .reasons-list,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-effect" id="hearts-container"></div>
+
+    <!-- Question Page -->
+    <section class="question-page" id="questionPage">
+        <div class="question-background-glow"></div>
+        <div class="question-container">
+            <div class="name-reveal">
+                <span class="name-letter">H</span>
+                <span class="name-letter">a</span>
+                <span class="name-letter">r</span>
+                <span class="name-letter">s</span>
+                <span class="name-letter">h</span>
+                <span class="name-letter">u</span>
+                <span class="name-letter">l</span>
+            </div>
+            
+            <div class="romantic-divider">
+                <span class="divider-heart">♥</span>
+                <span class="divider-line"></span>
+                <span class="divider-heart">♥</span>
+            </div>
+            
+            <h1 class="question-title">
+                <span class="title-word">I</span>
+                <span class="title-word">Love</span>
+                <span class="title-word">You</span>
+            </h1>
+            
+            <div class="rose-decoration">
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+                <div class="rose">🌹</div>
+            </div>
+            
+            <h2 class="question-text">
+                <span class="question-line">Will You Be</span>
+                <span class="question-line highlight-text">My Valentine?</span>
+            </h2>
+            
+            <div class="hearts-decoration">
+                <span>♥</span>
+                <span>❤</span>
+                <span>♥</span>
+                <span>❤</span>
+                <span>♥</span>
+            </div>
+            
+            <div class="buttons-container">
+                <button class="yes-button" id="yesButton">
+                    <span class="button-shine"></span>
+                    Yes, Forever! ❤️
+                </button>
+                <button class="no-button" id="noButton">No</button>
+            </div>
+            
+            <div class="sparkles-container">
+                <div class="sparkle">✨</div>
+                <div class="sparkle">✨</div>
+                <div class="sparkle">✨</div>
+                <div class="sparkle">✨</div>
+                <div class="sparkle">✨</div>
+                <div class="sparkle">✨</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Selection Page -->
+    <section class="gift-page" id="giftPage" style="display: none;">
+        <div class="gift-container">
+            <h1 class="gift-title">Choose Your Gift! 🎁</h1>
+            <p class="gift-subtitle">Pick one to see what I have for you...</p>
+            <div class="gifts-grid">
+                <div class="gift-box" data-gift="1">
+                    <div class="gift-icon">🎁</div>
+                    <div class="gift-label">Gift 1</div>
+                </div>
+                <div class="gift-box" data-gift="2">
+                    <div class="gift-icon">🎁</div>
+                    <div class="gift-label">Gift 2</div>
+                </div>
+                <div class="gift-box" data-gift="3">
+                    <div class="gift-icon">🎁</div>
+                    <div class="gift-label">Gift 3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift 1 Content: Original Love Letter, Photos, and Reasons -->
+    <div id="gift1Content" style="display: none;">
+        <section class="hero">
+            <button class="back-button" id="backButton">← Back to Gifts</button>
+            <h1>To My Love</h1>
+            <p>Happy Valentine's Day</p>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <div class="container">
+            <!-- Love Letter Section -->
+            <section class="love-letter-section">
+                <h2 class="section-title">A Letter From My Heart</h2>
+                <div class="love-letter">
+                    <div class="love-letter-content">
+                        <p>My Dearest Love,</p>
+                        <p>As I sit here thinking about us, I'm overwhelmed by how grateful I am to have you in my life. You are my best friend, my partner in crime, and the person who makes every ordinary moment feel extraordinary.</p>
+                        <p>From the way you make me laugh when I need it most, to how you support my dreams and believe in me even when I doubt myself — you've shown me what true love really means. Every day with you is a gift I never want to take for granted.</p>
+                        <p>Thank you for being exactly who you are. For your kindness, your strength, your humor, and the way you make my world brighter just by being in it. I can't wait to create countless more memories with you.</p>
+                        <p>Forever yours,</p>
+                        <div class="signature">With all my love ♥</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Gallery Section -->
+            <section class="gallery-section">
+                <h2 class="section-title">Our Beautiful Memories</h2>
+                <div class="gallery">
+                     <div class="photo-frame">
+        <img src="photo1.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">Our Goa Memories</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo2.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">A special moment together</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo3.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">One of our adventures</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo4.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">A memory to cherish</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo5.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">Us being happy</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo6.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">Another beautiful day</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo7.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">Our favorite place</div>
+    </div>
+    <div class="photo-frame">
+        <img src="photo8.jpeg" alt="Our memory" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-caption">Forever together</div>
+    </div>
+</div>
+
+            </section>
+
+            <!-- Reasons Section -->
+            <section class="reasons-section">
+                <h2 class="section-title">Why I Love You</h2>
+                <div class="reasons-list">
+                    <div class="reason-card">
+                        <div class="reason-number">01</div>
+                        <div class="reason-text">Your smile lights up my entire world and makes even the darkest days feel bright.</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">02</div>
+                        <div class="reason-text">The way you always know how to make me laugh, even when I'm trying to be serious.</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">03</div>
+                        <div class="reason-text">Your kindness and the way you care for everyone around you, including me.</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">04</div>
+                        <div class="reason-text">How you support my dreams and encourage me to be the best version of myself.</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">05</div>
+                        <div class="reason-text">The comfort I feel just being near you — you're my safe place.</div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-number">06</div>
+                        <div class="reason-text">Every little thing about you, from your quirks to your passions — you're perfectly imperfect.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Love Counter Section -->
+            <section class="love-counter-section">
+                <h2 class="section-title">We've Been Together For...</h2>
+                <div class="counter-container">
+                    <div class="counter-box">
+                        <div class="counter-number" id="days">0</div>
+                        <div class="counter-label">Days</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" id="hours">0</div>
+                        <div class="counter-label">Hours</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" id="minutes">0</div>
+                        <div class="counter-label">Minutes</div>
+                    </div>
+                    <div class="counter-box">
+                        <div class="counter-number" id="seconds">0</div>
+                        <div class="counter-label">Seconds</div>
+                    </div>
+                </div>
+                <p class="counter-subtitle">Since December 2, 2024 💕</p>
+            </section>
+
+            <!-- Love Quotes Section -->
+            <section class="quotes-section">
+                <h2 class="section-title">Our Love in Words</h2>
+                <div class="quotes-carousel">
+                    <div class="quote-card active">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text">In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.</p>
+                        <p class="quote-author">— Maya Angelou</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text">I love you not only for what you are, but for what I am when I am with you.</p>
+                        <p class="quote-author">— Roy Croft</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text">You are my today and all of my tomorrows.</p>
+                        <p class="quote-author">— Leo Christopher</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-mark">"</div>
+                        <p class="quote-text">I have found the one whom my soul loves.</p>
+                        <p class="quote-author">— Song of Solomon 3:4</p>
+                    </div>
+                </div>
+                <div class="quote-navigation">
+                    <button class="quote-nav-btn" id="prevQuote">❮</button>
+                    <button class="quote-nav-btn" id="nextQuote">❯</button>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Forever and Always</p>
+            <div class="heart-icon">♥</div>
+            <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.7;">Made with love, just for you</p>
+        </footer>
+    </div>
+
+    <!-- Gift 2 Content: Song with QR Code and Lyrics -->
+    <div id="gift2Content" style="display: none;">
+        <section class="hero">
+            <button class="back-button" id="backButton">← Back to Gifts</button>
+            <h1>Our Song</h1>
+            <p>A Melody Written for Us</p>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <div class="container">
+            <!-- Song Story Section -->
+            <section class="love-letter-section">
+                <h2 class="section-title">The Story Behind Our Song</h2>
+                <div class="love-letter">
+                    <div class="love-letter-content">
+                        <p>My Dearest Harshul,</p>
+                        <p>Our love story has been the greatest inspiration of my life. Every moment we've shared, every laugh, every adventure, every quiet evening together — they all weaved themselves into melodies in my heart that I just had to bring to life.</p>
+                        <p>This song is about us. It's about the way you looked at me the first time we met, the butterflies I still get when you smile, the warmth of your hand in mine, and all the beautiful memories we've created together. Every lyric holds a piece of our journey, every note carries the love I feel for you.</p>
+                        <p>I poured my heart into creating something that captures what words alone can't express — the depth of my love for you and the magic of what we have together. This isn't just a song; it's our story, our memories, and my promise that there are countless more chapters to write.</p>
+                        <p>I hope when you listen to it, you feel everything I feel when I'm with you.</p>
+                        <div class="signature">Forever yours ♥</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- QR Code Section -->
+            <section class="qr-section">
+                <h2 class="section-title">Scan to Listen</h2>
+                <div class="qr-container">
+                    <div class="qr-frame">
+                        <img src="qr.png" alt="Scan to listen to our song" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+                    </div>
+                    <p class="qr-instruction">Scan this code with your phone to hear our song</p>
+                </div>
+            </section>
+
+            <!-- Lyrics Section -->
+            <section class="lyrics-section">
+                <h2 class="section-title">The Lyrics</h2>
+                <p style="text-align: center; color: var(--rose-gold); font-size: 1.3rem; margin-bottom: 2rem;">🎵 Silver Beach, December Two</p>
+                <div class="lyrics-container">
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Intro</h3>
+                        <p style="font-style: italic; opacity: 0.8; margin-bottom: 1rem;">(soft piano, distant strings)</p>
+                        <p>We were just names in crowded rooms,</p>
+                        <p>Laughing where the future bloomed,</p>
+                        <p>Didn't know that fate was near...</p>
+                        <p>Till you were standing here.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Verse 1</h3>
+                        <p>We met through friends at IIM Mumbai,</p>
+                        <p>Shared a group, shared jokes, shared time,</p>
+                        <p>Late-night talks, familiar faces,</p>
+                        <p>Unplanned steps into secret places.</p>
+                        <p style="margin-top: 1rem;">Diwali lights were in the sky,</p>
+                        <p>But I was breaking down inside,</p>
+                        <p>You stayed when I had nothing left,</p>
+                        <p>Held the pieces I'd forget.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Pre-Chorus 1</h3>
+                        <p>And in that quiet, fragile space,</p>
+                        <p>You looked at me, saw my face,</p>
+                        <p>Lifted me up when I fell apart...</p>
+                        <p>Wrapped me close, mended my heart.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Chorus 1</h3>
+                        <p>You said I looked good when I felt small,</p>
+                        <p>In that moment, I felt it all,</p>
+                        <p>Like maybe love had found its way,</p>
+                        <p>Through broken nights and words unsaid.</p>
+                        <p style="margin-top: 1rem;">From crowded halls to borrowed time,</p>
+                        <p>Your hand found mine, and I was fine,</p>
+                        <p>That's when my heart began to see...</p>
+                        <p>You were already home to me.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Verse 2</h3>
+                        <p>Feelings grew like midnight tides,</p>
+                        <p>Unspoken, deep, we tried to hide,</p>
+                        <p>Then December second, ocean air,</p>
+                        <p>Silver Beach, we stood right there.</p>
+                        <p style="margin-top: 1rem;">You held me when I was sad,</p>
+                        <p>And cheered me when I was glad,</p>
+                        <p>Roses came after every fight,</p>
+                        <p>Soft toys, our little sparks of light.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Pre-Chorus 2</h3>
+                        <p>And the waves were counting time,</p>
+                        <p>As your lips finally met mine,</p>
+                        <p>The world went quiet, just us two...</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Chorus 2</h3>
+                        <p>We sorted fears, we chose the fight,</p>
+                        <p>Chose love on a silver night,</p>
+                        <p>From late-night vows to morning class,</p>
+                        <p>Running on no sleep, making moments last.</p>
+                        <p style="margin-top: 1rem;">If this is love, then let it stay,</p>
+                        <p>In every tear, in every day,</p>
+                        <p>'Cause every road keeps leading me...</p>
+                        <p>Back to you, back to we.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Bridge</h3>
+                        <p>We fought, we cried, we broke apart,</p>
+                        <p>Then found our way back, heart to heart,</p>
+                        <p>Movies played, your shoulder mine,</p>
+                        <p>Shared french fries and borrowed time.</p>
+                        <p style="margin-top: 1rem;">Picked me up, and held me close,</p>
+                        <p>Roses after storms, hugs the most,</p>
+                        <p>Every scar just proved to me,</p>
+                        <p>You were choosing us, choosing me.</p>
+                        <p style="margin-top: 1rem;">Soft toys on the bed, our little kin,</p>
+                        <p>Every day's adventure starts within,</p>
+                        <p>Life feels fuller, love complete,</p>
+                        <p>With your arms around me, safe and sweet.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Final Chorus</h3>
+                        <p>It was the best year of my life,</p>
+                        <p>Every low, every high,</p>
+                        <p>If love is real, then this is it,</p>
+                        <p>Every flaw, every kiss.</p>
+                        <p style="margin-top: 1rem;">From first hello to futures wide,</p>
+                        <p>I want you standing by my side,</p>
+                        <p>This isn't just a passing view...</p>
+                        <p>The rest of my life starts with you.</p>
+                    </div>
+
+                    <div class="lyrics-verse">
+                        <h3 class="verse-title">Outro</h3>
+                        <p style="font-style: italic; opacity: 0.8; margin-bottom: 1rem;">(soft strings, piano fades)</p>
+                        <p>Silver Beach still knows our names,</p>
+                        <p>December nights, eternal flames,</p>
+                        <p>If forever's real, I know it's true...</p>
+                        <p style="font-style: italic; margin-top: 1rem; color: var(--rose-gold);">Because forever starts with you.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Closing Note Section -->
+            <section class="love-letter-section">
+                <div class="love-letter" style="text-align: center;">
+                    <div class="love-letter-content">
+                        <p style="font-size: 1.4rem; line-height: 2;">I hope this song made you feel even a fraction of the love, joy, and warmth that I feel when I'm with you. Every note, every word, every melody was written with you in my heart. You inspire me in ways I never thought possible.</p>
+                        <p style="font-size: 1.2rem; color: var(--rose-gold); margin-top: 2rem;">Thank you for being my muse, my love, my everything ♥</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Our Love, Our Song</p>
+            <div class="heart-icon">♥</div>
+            <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.7;">Written from the heart, for you</p>
+        </footer>
+    </div>
+
+    <!-- Gift 3 Content: Love Coupons, Future, Timeline, Letters & Bucket List -->
+    <div id="gift3Content" style="display: none;">
+        <section class="hero">
+            <button class="back-button" id="backButton">← Back to Gifts</button>
+            <h1>Our Journey Together</h1>
+            <p>Past, Present & Future</p>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <div class="container">
+            <!-- Love Coupons Section -->
+            <section class="coupons-section">
+                <h2 class="section-title">Love Coupons Just For You</h2>
+                <p style="text-align: center; color: var(--rose-gold); font-size: 1.2rem; margin-bottom: 3rem;">Redeem these anytime, my love ♥</p>
+                <div class="coupons-grid">
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🍳</div>
+                        <div class="coupon-title">Breakfast in Bed</div>
+                        <div class="coupon-description">Your favorite breakfast, made with love and served to you</div>
+                        <div class="coupon-code">COUPON #001</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">💆</div>
+                        <div class="coupon-title">Massage Session</div>
+                        <div class="coupon-description">A relaxing full body massage whenever you need it</div>
+                        <div class="coupon-code">COUPON #002</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🎬</div>
+                        <div class="coupon-title">Movie Night</div>
+                        <div class="coupon-description">You pick the movie, I'll bring the snacks and cuddles</div>
+                        <div class="coupon-code">COUPON #003</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🍽️</div>
+                        <div class="coupon-title">Romantic Dinner</div>
+                        <div class="coupon-description">A home-cooked candlelit dinner made just for you</div>
+                        <div class="coupon-code">COUPON #004</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🎮</div>
+                        <div class="coupon-title">Your Choice Day</div>
+                        <div class="coupon-description">Whatever you want to do, we'll do it - your day, your rules</div>
+                        <div class="coupon-code">COUPON #005</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🚗</div>
+                        <div class="coupon-title">Adventure Day</div>
+                        <div class="coupon-description">A surprise day trip planned entirely by me</div>
+                        <div class="coupon-code">COUPON #006</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🧹</div>
+                        <div class="coupon-title">Chores Pass</div>
+                        <div class="coupon-description">I'll take care of all your chores for the day</div>
+                        <div class="coupon-code">COUPON #007</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">🤗</div>
+                        <div class="coupon-title">Unlimited Hugs</div>
+                        <div class="coupon-description">24 hours of endless hugs and cuddles whenever you want</div>
+                        <div class="coupon-code">COUPON #008</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Future Together Section -->
+            <section class="future-section">
+                <h2 class="section-title">Our Future Together</h2>
+                <p style="text-align: center; color: var(--rose-gold); font-size: 1.2rem; margin-bottom: 3rem;">Dreams we'll make reality ✨</p>
+                <div class="future-grid">
+                    <div class="future-card">
+                        <div class="future-year">2026</div>
+                        <div class="future-icon">🏖️</div>
+                        <div class="future-title">Beach Vacation</div>
+                        <div class="future-description">Sunset walks, ocean breeze, and endless quality time together</div>
+                    </div>
+                    <div class="future-card">
+                        <div class="future-year">2026</div>
+                        <div class="future-icon">🎓</div>
+                        <div class="future-title">Support Your Goals</div>
+                        <div class="future-description">I'll be there cheering for every achievement and milestone</div>
+                    </div>
+                    <div class="future-card">
+                        <div class="future-year">2027</div>
+                        <div class="future-icon">🏡</div>
+                        <div class="future-title">Our Place Together</div>
+                        <div class="future-description">Creating a home filled with love, laughter, and memories</div>
+                    </div>
+                    <div class="future-card">
+                        <div class="future-year">2027</div>
+                        <div class="future-icon">✈️</div>
+                        <div class="future-title">Travel the World</div>
+                        <div class="future-description">Exploring new places, cultures, and adventures hand in hand</div>
+                    </div>
+                    <div class="future-card">
+                        <div class="future-year">Future</div>
+                        <div class="future-icon">💍</div>
+                        <div class="future-title">Forever & Always</div>
+                        <div class="future-description">Building a lifetime of love, happiness, and dreams come true</div>
+                    </div>
+                    <div class="future-card">
+                        <div class="future-year">Always</div>
+                        <div class="future-icon">❤️</div>
+                        <div class="future-title">Grow Together</div>
+                        <div class="future-description">Supporting each other through every chapter of life</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Love Letters Collection Section -->
+            <section class="letters-section">
+                <h2 class="section-title">Letters From My Heart</h2>
+                <p style="text-align: center; color: var(--rose-gold); font-size: 1.2rem; margin-bottom: 3rem;">Open these whenever you need them 💌</p>
+                <div class="letters-grid">
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">When You're Feeling Down</div>
+                        <div class="letter-content">
+                            <p>My love, I know some days are harder than others. But please remember: you are stronger than you know, braver than you believe, and so deeply loved. Your smile lights up my world, and I'll do everything I can to bring it back. I'm here, always. Let me be your comfort, your shoulder, your safe place. Together, we can get through anything. I love you. ♥</p>
+                        </div>
+                    </div>
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">When You Need Motivation</div>
+                        <div class="letter-content">
+                            <p>Hey champion! I see how hard you work, how much you care, and how dedicated you are. You've got this! Every challenge you face is just another opportunity to show the world how amazing you are. I believe in you more than you could ever know. Keep pushing, keep dreaming, keep being the incredible person you are. I'm so proud of you! ♥</p>
+                        </div>
+                    </div>
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">When We're Apart</div>
+                        <div class="letter-content">
+                            <p>Distance means nothing when someone means everything. Even when we're apart, you're always in my thoughts and forever in my heart. I'm counting down the moments until I can see your face, hear your laugh, and hold you close again. You're worth every second of waiting. Missing you always, loving you forever. ♥</p>
+                        </div>
+                    </div>
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">Just Because</div>
+                        <div class="letter-content">
+                            <p>There's no special reason for this letter except that I was thinking about you (which is pretty much always). I just wanted you to know that you make my ordinary days extraordinary. Your presence in my life is the greatest gift. Thank you for being you, for choosing me, for all the little things that make us, us. I love you more every day. ♥</p>
+                        </div>
+                    </div>
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">Before a Big Day</div>
+                        <div class="letter-content">
+                            <p>You're about to do something amazing, and I want you to know I'm right there with you in spirit. Take a deep breath, trust yourself, and remember - you've prepared for this, you're ready for this, and you're going to be incredible. No matter what happens, I'm proud of you. Now go show them what you're made of! You've got this! ♥</p>
+                        </div>
+                    </div>
+                    <div class="letter-envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-label">On a Random Tuesday</div>
+                        <div class="letter-content">
+                            <p>Hi love! Just a reminder that you're the best part of my day, every day. Your laugh is my favorite sound, your smile is my favorite sight, and your love is my favorite feeling. I hope today treats you kindly. And if it doesn't, just remember - I'm here, and together we can handle anything. Love you endlessly! ♥</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bucket List Section -->
+            <section class="bucketlist-section">
+                <h2 class="section-title">Our Bucket List</h2>
+                <p style="text-align: center; color: var(--rose-gold); font-size: 1.2rem; margin-bottom: 3rem;">Adventures awaiting us 🎯</p>
+                <div class="bucketlist-container">
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket1" class="bucket-checkbox">
+                        <label for="bucket1" class="bucket-label">
+                            <span class="bucket-icon">🌅</span>
+                            <span class="bucket-text">Watch the sunrise together at the beach</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket2" class="bucket-checkbox">
+                        <label for="bucket2" class="bucket-label">
+                            <span class="bucket-icon">🏕️</span>
+                            <span class="bucket-text">Go camping under the stars</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket3" class="bucket-checkbox">
+                        <label for="bucket3" class="bucket-label">
+                            <span class="bucket-icon">🍳</span>
+                            <span class="bucket-text">Take a cooking class together</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket4" class="bucket-checkbox">
+                        <label for="bucket4" class="bucket-label">
+                            <span class="bucket-icon">🎢</span>
+                            <span class="bucket-text">Spend a day at an amusement park</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket5" class="bucket-checkbox">
+                        <label for="bucket5" class="bucket-label">
+                            <span class="bucket-icon">🚴</span>
+                            <span class="bucket-text">Go on a bike ride through the countryside</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket6" class="bucket-checkbox">
+                        <label for="bucket6" class="bucket-label">
+                            <span class="bucket-icon">🎭</span>
+                            <span class="bucket-text">Attend a live concert or show</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket7" class="bucket-checkbox">
+                        <label for="bucket7" class="bucket-label">
+                            <span class="bucket-icon">📸</span>
+                            <span class="bucket-text">Have a professional photoshoot together</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket8" class="bucket-checkbox">
+                        <label for="bucket8" class="bucket-label">
+                            <span class="bucket-icon">🏔️</span>
+                            <span class="bucket-text">Hike to the top of a mountain</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket9" class="bucket-checkbox">
+                        <label for="bucket9" class="bucket-label">
+                            <span class="bucket-icon">🍕</span>
+                            <span class="bucket-text">Try every restaurant on our food bucket list</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket10" class="bucket-checkbox">
+                        <label for="bucket10" class="bucket-label">
+                            <span class="bucket-icon">🎨</span>
+                            <span class="bucket-text">Create art together (painting, pottery, etc.)</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket11" class="bucket-checkbox">
+                        <label for="bucket11" class="bucket-label">
+                            <span class="bucket-icon">🌃</span>
+                            <span class="bucket-text">Have a spontaneous weekend road trip</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket12" class="bucket-checkbox">
+                        <label for="bucket12" class="bucket-label">
+                            <span class="bucket-icon">💑</span>
+                            <span class="bucket-text">Dance in the rain together</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket13" class="bucket-checkbox">
+                        <label for="bucket13" class="bucket-label">
+                            <span class="bucket-icon">🎪</span>
+                            <span class="bucket-text">Visit a carnival or fair</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket14" class="bucket-checkbox">
+                        <label for="bucket14" class="bucket-label">
+                            <span class="bucket-icon">🌺</span>
+                            <span class="bucket-text">Plant a garden together</span>
+                        </label>
+                    </div>
+                    <div class="bucketlist-item">
+                        <input type="checkbox" id="bucket15" class="bucket-checkbox">
+                        <label for="bucket15" class="bucket-label">
+                            <span class="bucket-icon">✨</span>
+                            <span class="bucket-text">Create a time capsule of our memories</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Our Story Continues...</p>
+            <div class="heart-icon">♥</div>
+            <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.7;">Every day with you is a new adventure</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating hearts animation
+        const heartsContainer = document.getElementById('hearts-container');
+        const heartSymbols = ['♥', '❤', '♡'];
+        
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-particle';
+            heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 20000);
+        }
+
+        // Create initial hearts
+        for (let i = 0; i < 15; i++) {
+            createHeart();
+        }
+
+        // Continue creating hearts
+        setInterval(createHeart, 2000);
+
+        // Smooth scroll reveal for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInSection 1s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Question page interactive buttons
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const questionPage = document.getElementById('questionPage');
+        const giftPage = document.getElementById('giftPage');
+        const heroSection = document.getElementById('heroSection');
+        const mainContent = document.getElementById('mainContent');
+
+        const noButtonTexts = [
+            "Are you sure? 🥺",
+            "Think again! 💭",
+            "Really? 😢",
+            "Pretty please? 🙏",
+            "Just try clicking Yes! 💕",
+            "Come on... 😔",
+            "You're breaking my heart! 💔",
+            "One more chance? 🥹",
+            "I know you want to say Yes! 😊",
+            "The Yes button is so lonely! 😭"
+        ];
+
+        let noButtonClickCount = 0;
+
+        // No button hover effect - moves away
+        noButton.addEventListener('mouseenter', function() {
+            const maxX = window.innerWidth - noButton.offsetWidth - 40;
+            const maxY = window.innerHeight - noButton.offsetHeight - 40;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noButton.style.position = 'fixed';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+            
+            // Change text
+            noButton.textContent = noButtonTexts[noButtonClickCount % noButtonTexts.length];
+            noButtonClickCount++;
+        });
+
+        // Yes button click - show gift page
+        yesButton.addEventListener('click', function() {
+            questionPage.style.display = 'none';
+            giftPage.style.display = 'flex';
+        });
+
+        // Gift boxes click - reveal different content for each gift
+        const giftBoxes = document.querySelectorAll('.gift-box');
+        const gift1Content = document.getElementById('gift1Content');
+        const gift2Content = document.getElementById('gift2Content');
+        const gift3Content = document.getElementById('gift3Content');
+        
+        giftBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                const giftNumber = this.getAttribute('data-gift');
+                giftPage.style.display = 'none';
+                
+                // Hide all gift contents first
+                gift1Content.style.display = 'none';
+                gift2Content.style.display = 'none';
+                gift3Content.style.display = 'none';
+                
+                // Show the selected gift content
+                if (giftNumber === '1') {
+                    gift1Content.style.display = 'block';
+                } else if (giftNumber === '2') {
+                    gift2Content.style.display = 'block';
+                } else if (giftNumber === '3') {
+                    gift3Content.style.display = 'block';
+                }
+                
+                // Smooth scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Back buttons - return to gift page (handle all back buttons)
+        const backButtons = document.querySelectorAll('.back-button');
+        backButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                gift1Content.style.display = 'none';
+                gift2Content.style.display = 'none';
+                gift3Content.style.display = 'none';
+                giftPage.style.display = 'flex';
+                
+                // Smooth scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Letter envelope interaction
+        document.querySelectorAll('.letter-envelope').forEach(envelope => {
+            envelope.addEventListener('click', function() {
+                this.classList.toggle('opened');
+            });
+        });
+
+        // Love Counter - Counts time since December 2, 2024
+        function updateCounter() {
+            const startDate = new Date('December 2, 2024 00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if (daysEl) daysEl.textContent = days;
+            if (hoursEl) hoursEl.textContent = hours;
+            if (minutesEl) minutesEl.textContent = minutes;
+            if (secondsEl) secondsEl.textContent = seconds;
+        }
+
+        // Update counter every second
+        setInterval(updateCounter, 1000);
+        updateCounter(); // Initial call
+
+        // Quotes Carousel
+        let currentQuote = 0;
+        const quotes = document.querySelectorAll('.quote-card');
+        const prevBtn = document.getElementById('prevQuote');
+        const nextBtn = document.getElementById('nextQuote');
+
+        function showQuote(index) {
+            quotes.forEach((quote, i) => {
+                quote.classList.remove('active');
+                if (i === index) {
+                    quote.classList.add('active');
+                }
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentQuote = (currentQuote - 1 + quotes.length) % quotes.length;
+                showQuote(currentQuote);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                showQuote(currentQuote);
+            });
+        }
+
+        // Auto-rotate quotes every 5 seconds
+        setInterval(() => {
+            if (quotes.length > 0) {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                showQuote(currentQuote);
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
